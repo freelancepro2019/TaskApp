@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">TaskApp</string>
+    <string name="log_in">Log In</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="create_an_account">Create a new account</string>
+    <string name="user_name">Name</string>
+    <string name="logout">Logout</string>
+    <string name="field_req">Field required</string>
+    <string name="inv_email">Invalid email</string>
+    <string name="back">Back</string>
+    <string name="wait">Wait...</string>
+    <string name="inv_em_ps">Invalid Email or Password</string>
+    <string name="failed">Failed</string>
+    <string name="email">Email</string>
+    <string name="send">Send</string>
+    <string name="pass_short">password too short</string>
+    <string name="notifications">Notification</string>
+    <string name="or">OR</string>
+    <string name="user_not_found">User not found</string>
+    <string name="re_password">Re-Password</string>
+    <string name="use_fingerprint">Use Fingerprint</string>
+    <string name="fingerprint">Fingerprint</string>
+    <string name="put_your_finger_on_sensor">Put your finger on sensor to verify your identity</string>
+    <string name="fingerprint_authentication">Fingerprint Authentication</string>
+    <string name="your_device_not_support_fingerprint">Your device not support fingerprint</string>
+    <string name="no_finger">No fingerprint configured. Please register at least one fingerprint in your device\'s Settings</string>
+    <string name="enable_lockscreen">Please enable lock screen security in your device</string>
+    <string name="let_s_start">Let\'s Start</string>
+    <string name="you_already_have_an_account_log_in">You already have an account! log in</string>
+    <string name="pas_not_match">Password not match</string>
+    <string name="suc">Success</string>
+    <string name="home">Home</string>
+    <string name="hi">Hi</string>
+    <string name="ch_finger">Choose Fingerprint</string>
+
+
+</resources>
