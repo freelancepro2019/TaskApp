@@ -80,10 +80,15 @@ public class LoginActivity extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(loginModel.getEmail(), loginModel.getPassword())
                 .addOnSuccessListener(authResult -> {
 
-                    if (authResult.getUser() != null) {
+                    if (authResult.getUser() != null&&mAuth.getCurrentUser().isEmailVerified()) {
                         String user_id = authResult.getUser().getUid();
                         Log.e("user_id",user_id);
                         getUserDataById(dialog, user_id);
+                    }else{
+                        dialog.dismiss();
+
+                        Toast.makeText(this, "You should verfy Your email address", Toast.LENGTH_SHORT).show();
+
                     }
 
                 }).addOnFailureListener(e -> {
