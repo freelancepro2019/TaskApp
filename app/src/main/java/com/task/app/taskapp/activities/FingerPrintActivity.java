@@ -61,6 +61,8 @@ public class FingerPrintActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_fingerprint);
         initView();
     }
+    // هذه الميثود تعمل على تعريف المتغيرات والربط بين الشكل الموجود فى ال xml
+    //كما تعمل على معرفة نوع الجهاز والفرجن الخاص به لاستخدام البصمة
 
     private void initView() {
 
@@ -108,6 +110,7 @@ public class FingerPrintActivity extends AppCompatActivity {
 
     }
 
+    // ميثود خاصة بانشاء الكى الخاص بالبصمة
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void generateKey() {
 
@@ -174,6 +177,7 @@ public class FingerPrintActivity extends AppCompatActivity {
 
     }
 
+    // جميع الميثود اللى قبلها كلمة override مستدعاه اتوماتك من الاندرويد استوديو نقوم باستخدامها لل fingerprint
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -247,6 +251,7 @@ public class FingerPrintActivity extends AppCompatActivity {
         }
     }
 
+    // ميثود مستخدمه لعمل back
     @Override
     public void onBackPressed() {
         setResult(RESULT_CANCELED);

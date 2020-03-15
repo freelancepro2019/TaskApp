@@ -19,12 +19,15 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
 
+    // اول ميثود تستدعى عند فتح الابلكيشن
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
         initView();
     }
+
+    // بها ناخذ اسم اليوزر من الشيرد بريفرنس و زر تسجيل الخروج
 
     private void initView() {
         mAuth = FirebaseAuth.getInstance();

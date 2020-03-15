@@ -24,6 +24,7 @@ public class Preferences {
         return instance;
     }
 
+    // ميثود لانشاء وتحديث بيانات يوزر فى البرفرنس
 
     public void create_update_userData(Context context , UserModel userModel)
     {
@@ -36,6 +37,7 @@ public class Preferences {
         createSession(context, Tags.session_login);
     }
 
+    // ميثود للحصول على بيانات المستخدم
     public UserModel getUserData(Context context)
     {
         SharedPreferences preferences = context.getSharedPreferences("userPref",Context.MODE_PRIVATE);
@@ -43,6 +45,7 @@ public class Preferences {
         return new Gson().fromJson(userDataGson,UserModel.class);
     }
 
+    // ميثود لخلق سيشن حتى لا يتم عمل تسجيل خرووج فى كل مره نخرج من الابلكيشن
     public void createSession(Context context,String session)
     {
         SharedPreferences preferences = context.getSharedPreferences("sessionPref",Context.MODE_PRIVATE);
@@ -51,11 +54,14 @@ public class Preferences {
         editor.apply();
     }
 
+    // ميثود للحصول على السيشن
     public String getSession(Context context)
     {
         SharedPreferences preferences = context.getSharedPreferences("sessionPref",Context.MODE_PRIVATE);
         return preferences.getString("session","");
     }
+
+    // ميثود لمسح الداتا عند تسجيل الخروج
 
     public void clear(Context context)
     {

@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         initView();
     }
 
+    // ميثود للتحقق من البيانات صحيحه كما يمكننى من خلالها الذهاب لصفحة تسجيل مستخدم جديد
     private void initView() {
         preferences = Preferences.newInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -66,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    // ميثود خاصة للتحقق من البيانات موجوده وصالحة للاستخدام
+
     public void checkDataLogin() {
 
         if (loginModel.isDataValid(this)) {
@@ -74,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    // ميثود خاصة لارسال البيانات الى الفاير بيز لعمل تسجيل دخول كما بها يمكننى التحقق اذا كان الايميل نشيط وصالح الاستخدام او لا
     private void login() {
         ProgressDialog dialog = Common.createProgressDialog(this, getString(R.string.wait));
         dialog.show();
@@ -102,6 +106,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    // ميثود تستخدم للحصول على تفاصيل المستخدم باستخدام ال id
     private void getUserDataById(ProgressDialog dialog, String user_id) {
 
         dRef.child(Tags.TABLE_USERS).child(user_id).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -133,11 +138,14 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    // تستدعى لفتح صفحة البصمة
     private void navigateToFingerprintActivity() {
 
         Intent intent = new Intent(this, FingerPrintActivity.class);
         startActivityForResult(intent, 100);
     }
+
+    // ميثود تستخدم لفتح الصفحة الرئيسية
 
     private void navigateToHomeActivity() {
 
@@ -147,6 +155,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    // ميثود تستدعى لقراءه النتائج
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

@@ -46,6 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
         initView();
     }
 
+    // ميثود للذهاب صفحة البصمة كما بها تعريف الفاير بيز
     private void initView() {
         preferences = Preferences.newInstance();
         signUpModel = new SignUpModel();
@@ -65,6 +66,7 @@ public class SignUpActivity extends AppCompatActivity {
         binding.btnSignUp.setOnClickListener(view -> checkDataSignUp());
     }
 
+    // التحقق من الداتا صحيحه
 
     public void checkDataSignUp() {
         if (signUpModel.isDataValid(this)) {
@@ -73,6 +75,7 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
+    // ميثود خاصة بانشاء حساب جديد واضافة مستخدم الى الشيرد برفرنس
     private void createAccount() {
 
         ProgressDialog dialog = Common.createProgressDialog(this, getString(R.string.wait));
@@ -114,6 +117,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
+    // ميثود خاصه لاضافة مستخدم الى الفاير بيز  كما بها التاكيد بالايميل
     private void addUserToDatabase(ProgressDialog dialog, String userId) {
 
         String encyreptedPassword = "";
@@ -148,6 +152,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
+    // ميثود للذهاب الى صفحة تسجيل الدخول
     private void navigateToLoginActivity() {
         mAuth.signOut();
         preferences.clear(this);
@@ -183,6 +188,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
+    // ميثود لعمل back
     public void back() {
 
         Intent intent = new Intent(this, LoginActivity.class);

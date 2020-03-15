@@ -19,6 +19,7 @@ import com.task.app.taskapp.databinding.DialogAlertBinding;
 public class Common {
 
 
+    // ميثود لاغلاق لوحة المفاتيح الخاثة بالتلفون المحمول
     public static void CloseKeyBoard(Context context, View view) {
         if (context != null && view != null) {
             InputMethodManager manager = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -32,6 +33,8 @@ public class Common {
 
 
     }
+
+    // ميثود لانشاء ديالوج
 
     public static void CreateDialogAlert(Context context,String msg) {
         final AlertDialog dialog = new AlertDialog.Builder(context)
@@ -48,6 +51,7 @@ public class Common {
         dialog.show();
     }
 
+    // ميثود لانشاء بروجرس ديالوج
     public static ProgressDialog createProgressDialog(Context context, String msg) {
         ProgressDialog dialog = new ProgressDialog(context);
         dialog.setMessage(msg);
